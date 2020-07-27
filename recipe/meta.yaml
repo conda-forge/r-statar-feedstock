@@ -1,4 +1,4 @@
-{% set version = '0.7.1' %}
+{% set version = "0.7.2" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/statar_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/statar/statar_{{ version }}.tar.gz
-  sha256: 7b36859c9986a67a5e04107c91f4241d9a50576fc1a1d7ce657d4b5b8783ac3f
+  sha256: 58a50e0571c8db00c5c0f47051e613d32d4477f7ea20be3e01ba01e52cbf6b99
 
 build:
-  merge_build_host: True  # [win]
-  number: 2
+  merge_build_host: true  # [win]
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
@@ -54,10 +54,9 @@ test:
 about:
   home: https://github.com/matthieugomez/statar
   license: GPL-2
-  summary: A set of tools inspired by 'Stata' to explore data.frames ('summarize', 'tabulate',
-    'xtile', 'pctile', 'binscatter', elapsed quarters/month, lead/lag).
+  summary: A set of tools inspired by 'Stata' to explore data.frames ('summarize', 'tabulate', 'xtile', 'pctile', 'binscatter', elapsed quarters/month, lead/lag).
   license_family: GPL2
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
+  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
 
 extra:
   recipe-maintainers:
