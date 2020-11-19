@@ -5,11 +5,9 @@ Home: https://github.com/matthieugomez/statar
 
 Package license: GPL-2
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-statar-feedstock/blob/master/LICENSE.txt)
 
 Summary: A set of tools inspired by 'Stata' to explore data.frames ('summarize', 'tabulate', 'xtile', 'pctile', 'binscatter', elapsed quarters/month, lead/lag).
-
-
 
 Current build status
 ====================
