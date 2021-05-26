@@ -3,7 +3,7 @@ About r-statar
 
 Home: https://github.com/matthieugomez/statar
 
-Package license: GPL-2
+Package license: GPL-2.0-only
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-statar-feedstock/blob/master/LICENSE.txt)
 
