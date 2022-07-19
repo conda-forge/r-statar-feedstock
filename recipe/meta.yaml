@@ -1,4 +1,4 @@
-{% set version = "0.7.3" %}
+{% set version = "0.7.4" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/statar_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/statar/statar_{{ version }}.tar.gz
-  sha256: 890dc457aab6a2722aa283948ca71c2d19569f06fd520524cedaeb66c10bef9f
+  sha256: 799cb6edee154b55b68521bbca5d8f617f6ee501070d5b44f1e8c73b2982c249
 
 build:
   merge_build_host: true  # [win]
