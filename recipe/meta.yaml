@@ -1,4 +1,4 @@
-{% set version = "0.7.4" %}
+{% set version = "0.7.5" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/statar_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/statar/statar_{{ version }}.tar.gz
-  sha256: 799cb6edee154b55b68521bbca5d8f617f6ee501070d5b44f1e8c73b2982c249
+  sha256: f59dbbe306ab7944eccc3dff10f70e5b921f2423c22053587a1487dbc90c54e6
 
 build:
   merge_build_host: true  # [win]
-  number: 1
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
@@ -23,27 +23,26 @@ build:
 requirements:
   build:
     - {{ posix }}zip               # [win]
+    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
     - r-data.table
-    - r-dplyr >=0.8.0
+    - r-dplyr >=1.0
     - r-ggplot2 >=2.0.0
     - r-lazyeval
     - r-matrixstats
     - r-rlang
     - r-stringr
-    - r-tidyr
     - r-tidyselect
   run:
     - r-base
     - r-data.table
-    - r-dplyr >=0.8.0
+    - r-dplyr >=1.0
     - r-ggplot2 >=2.0.0
     - r-lazyeval
     - r-matrixstats
     - r-rlang
     - r-stringr
-    - r-tidyr
     - r-tidyselect
 
 test:
@@ -56,7 +55,8 @@ about:
   license: GPL-2.0-only
   summary: A set of tools inspired by 'Stata' to explore data.frames ('summarize', 'tabulate', 'xtile', 'pctile', 'binscatter', elapsed quarters/month, lead/lag).
   license_family: GPL2
-  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
+  license_file:
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
 
 extra:
   recipe-maintainers:
