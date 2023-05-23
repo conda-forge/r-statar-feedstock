@@ -23,27 +23,26 @@ build:
 requirements:
   build:
     - {{ posix }}zip               # [win]
+    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
     - r-data.table
-    - r-dplyr >=0.8.0
+    - r-dplyr >=1.0
     - r-ggplot2 >=2.0.0
     - r-lazyeval
     - r-matrixstats
     - r-rlang
     - r-stringr
-    - r-tidyr
     - r-tidyselect
   run:
     - r-base
     - r-data.table
-    - r-dplyr >=0.8.0
+    - r-dplyr >=1.0
     - r-ggplot2 >=2.0.0
     - r-lazyeval
     - r-matrixstats
     - r-rlang
     - r-stringr
-    - r-tidyr
     - r-tidyselect
 
 test:
@@ -56,7 +55,8 @@ about:
   license: GPL-2.0-only
   summary: A set of tools inspired by 'Stata' to explore data.frames ('summarize', 'tabulate', 'xtile', 'pctile', 'binscatter', elapsed quarters/month, lead/lag).
   license_family: GPL2
-  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
+  license_file:
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
 
 extra:
   recipe-maintainers:
