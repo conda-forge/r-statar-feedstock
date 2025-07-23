@@ -1,4 +1,4 @@
-{% set version = "0.7.6" %}
+{% set version = "0.7.7" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,10 +9,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/statar_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/statar/statar_{{ version }}.tar.gz
-  sha256: e498b5d6fa67404a4a8a8a99abf6798252e0b50ead4ee3306d0855d6ecaf543a
+  sha256: 899b1c816f60f44bdba55ee50c9be5bfd04dc00746d7977a4291e7f616547f8b
 
 build:
-  number: 1
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
